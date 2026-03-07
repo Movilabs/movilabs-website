@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Movilabs",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
       },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Movilabs",
     description:
       "Aplicaciones móviles simples, útiles y bien diseñadas.",
-    images: ["/opengraph-image"],
+    images: ["/opengraph-image.png"],
   },
 };
 

@@ -58,11 +58,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Movilabs",
       locale: seo.locale,
       type: "website",
+      images: [
+        {
+          url: "/opengraph-image.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
+      images: ["/opengraph-image.png"],
     },
   };
 }
