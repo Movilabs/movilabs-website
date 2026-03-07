@@ -23,7 +23,49 @@ export const metadata: Metadata = {
     default: "Movilabs",
     template: "%s | Movilabs",
   },
+  description:
+    "Movilabs es un estudio independiente enfocado en crear aplicaciones móviles simples, útiles y bien diseñadas.",
   applicationName: "Movilabs",
+  keywords: [
+    "Movilabs",
+    "apps móviles",
+    "desarrollo de apps",
+    "aplicaciones móviles",
+    "estudio de software",
+    "inteligencia artificial",
+    "mobile apps",
+    "app studio",
+  ],
+  authors: [{ name: "Movilabs" }],
+  creator: "Movilabs",
+  publisher: "Movilabs",
+  alternates: {
+    canonical: "https://movilabs.app",
+    languages: {
+      "es": "https://movilabs.app/es",
+      "en": "https://movilabs.app/en",
+      "pt": "https://movilabs.app/pt",
+    },
+  },
+  openGraph: {
+    title: "Movilabs",
+    description:
+      "Estudio independiente enfocado en crear aplicaciones móviles simples, útiles y bien diseñadas.",
+    url: "https://movilabs.app",
+    siteName: "Movilabs",
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Movilabs",
+    description:
+      "Estudio independiente enfocado en crear aplicaciones móviles simples, útiles y bien diseñadas.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function RootLayout({
