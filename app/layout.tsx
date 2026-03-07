@@ -19,52 +19,40 @@ const display = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://movilabs.app"),
+
   title: {
     default: "Movilabs",
     template: "%s | Movilabs",
   },
+
   description:
-    "Movilabs es un estudio independiente enfocado en crear aplicaciones móviles simples, útiles y bien diseñadas.",
+    "Movilabs es un estudio independiente dedicado al desarrollo de aplicaciones móviles simples, útiles y bien diseñadas.",
+
   applicationName: "Movilabs",
-  keywords: [
-    "Movilabs",
-    "apps móviles",
-    "desarrollo de apps",
-    "aplicaciones móviles",
-    "estudio de software",
-    "inteligencia artificial",
-    "mobile apps",
-    "app studio",
-  ],
-  authors: [{ name: "Movilabs" }],
-  creator: "Movilabs",
-  publisher: "Movilabs",
-  alternates: {
-    canonical: "https://movilabs.app",
-    languages: {
-      "es": "https://movilabs.app/es",
-      "en": "https://movilabs.app/en",
-      "pt": "https://movilabs.app/pt",
-    },
-  },
+
   openGraph: {
     title: "Movilabs",
     description:
-      "Estudio independiente enfocado en crear aplicaciones móviles simples, útiles y bien diseñadas.",
+      "Aplicaciones móviles simples, útiles y bien diseñadas.",
     url: "https://movilabs.app",
     siteName: "Movilabs",
-    locale: "es_AR",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "es_ES",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Movilabs",
     description:
-      "Estudio independiente enfocado en crear aplicaciones móviles simples, útiles y bien diseñadas.",
-  },
-  robots: {
-    index: true,
-    follow: true,
+      "Aplicaciones móviles simples, útiles y bien diseñadas.",
+    images: ["/opengraph-image"],
   },
 };
 
