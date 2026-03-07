@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
 import { SiteFooter } from "@/components/site-footer";
@@ -16,7 +16,18 @@ const languageAlternates = {
   pt: "/pt",
 };
 
-export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
+const sharedOgImage = {
+  url: "/opengraph-image.png",
+  width: 1200,
+  height: 630,
+};
+
+const sharedTwitterImage = "/opengraph-image.png";
+
+export async function generateMetadata(
+  { params }: HomePageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
@@ -24,6 +35,17 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
   }
 
   const t = getDictionary(locale);
+  const previousMetadata = await parent;
+  const parentOgImages = previousMetadata.openGraph?.images
+    ? Array.isArray(previousMetadata.openGraph.images)
+      ? previousMetadata.openGraph.images
+      : [previousMetadata.openGraph.images]
+    : [];
+  const parentTwitterImages = previousMetadata.twitter?.images
+    ? Array.isArray(previousMetadata.twitter.images)
+      ? previousMetadata.twitter.images
+      : [previousMetadata.twitter.images]
+    : [];
 
   return {
     title: t.metadata.homeTitle,
@@ -39,11 +61,13 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
       title: t.metadata.homeTitle,
       description: t.metadata.homeDescription,
       locale: t.metadata.ogLocale,
+      images: [sharedOgImage, ...parentOgImages],
     },
     twitter: {
       card: "summary_large_image",
       title: t.metadata.homeTitle,
       description: t.metadata.homeDescription,
+      images: [sharedTwitterImage, ...parentTwitterImages],
     },
   };
 }

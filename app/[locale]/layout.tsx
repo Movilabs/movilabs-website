@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/i18n/config";
 
@@ -31,7 +31,18 @@ const seoByLocale = {
   },
 } as const;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+const sharedOgImage = {
+  url: "/opengraph-image.png",
+  width: 1200,
+  height: 630,
+};
+
+const sharedTwitterImage = "/opengraph-image.png";
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
@@ -39,6 +50,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const seo = seoByLocale[locale];
+  const previousMetadata = await parent;
+  const parentOgImages = previousMetadata.openGraph?.images
+    ? Array.isArray(previousMetadata.openGraph.images)
+      ? previousMetadata.openGraph.images
+      : [previousMetadata.openGraph.images]
+    : [];
+  const parentTwitterImages = previousMetadata.twitter?.images
+    ? Array.isArray(previousMetadata.twitter.images)
+      ? previousMetadata.twitter.images
+      : [previousMetadata.twitter.images]
+    : [];
 
   return {
     title: seo.title,
@@ -58,19 +80,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Movilabs",
       locale: seo.locale,
       type: "website",
-      images: [
-        {
-          url: "/opengraph-image.png",
-          width: 1200,
-          height: 630,
-        },
-      ],
+      images: [sharedOgImage, ...parentOgImages],
     },
     twitter: {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
-      images: ["/opengraph-image.png"],
+      images: [sharedTwitterImage, ...parentTwitterImages],
     },
   };
 }
