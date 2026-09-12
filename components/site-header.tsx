@@ -13,16 +13,14 @@ const localeLabel: Record<Locale, string> = {
 
 type SiteHeaderProps = {
   locale: Locale;
-  currentPath: "/" | "/privacy";
+  currentPath: string;
   labels: {
     about: string;
     contact: string;
     privacy: string;
     language: string;
   };
-};
-
-function buildLocaleHref(targetLocale: Locale, currentPath: "/" | "/privacy") {
+};function buildLocaleHref(targetLocale: Locale, currentPath: string) {
   return currentPath === "/" ? `/${targetLocale}` : `/${targetLocale}${currentPath}`;
 }
 
