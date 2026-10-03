@@ -46,6 +46,8 @@ export type Dictionary = {
     title: string;
     lastUpdated: string;
     intro: string;
+    controllerTitle: string;
+    controllerBody: string;
     dataCollectedTitle: string;
     dataCollectedBody: string;
     dataCollectedNote: string;
@@ -55,6 +57,9 @@ export type Dictionary = {
     subscriptionsBody: string;
     institutionalWebsiteTitle: string;
     institutionalWebsiteBody: string;
+    productPolicyTitle: string;
+    productPolicyBody: string;
+    productPolicyLink: string;
     changesTitle: string;
     changesBody: string;
     contactTitle: string;
@@ -123,26 +128,33 @@ const dictionaries: Record<Locale, Dictionary> = {
     privacy: {
       legalKicker: "Legal",
       title: "Política de privacidad",
-      lastUpdated: "Última actualización: 7 de marzo de 2026",
+      lastUpdated: "Última actualización: 3 de octubre de 2026",
       intro:
         "Esta política describe cómo Movilabs gestiona la información de los usuarios en relación con sus aplicaciones móviles y este sitio web institucional.",
+      controllerTitle: "Responsable",
+      controllerBody:
+        "Movilabs es la marca bajo la que opera Maximiliano Cuesta, desarrollador independiente radicado en Chubut, Argentina. Para consultas de privacidad o ejercicio de derechos, podés escribir a legal@movilabs.app.",
       dataCollectedTitle: "Datos recopilados",
       dataCollectedBody:
-        "Nuestras aplicaciones, incluyendo Pulso, funcionan completamente en el dispositivo del usuario (local-first). No recopilamos, almacenamos ni transmitimos datos personales a servidores externos. Toda la información generada por el uso de la app permanece exclusivamente en tu dispositivo.",
+        "Nuestras aplicaciones están diseñadas con un enfoque local-first. En Pulso, los registros financieros permanecen en el dispositivo. Algunas funciones pueden compartir datos técnicos o resúmenes de uso opcionales, limitados y consentidos, según se explica en la política específica de cada producto.",
       dataCollectedNote:
-        "Movilabs no tiene acceso a ningún dato personal tuyo. Tu información no sale de tu dispositivo.",
+        "Pulso no envía movimientos, saldos, cuentas, categorías ni notas a Movilabs. Su medición opcional de Ritmo excluye esos datos y requiere consentimiento expreso.",
       thirdPartyTitle: "Servicios de terceros",
       thirdPartyBody:
-        "Nuestras aplicaciones no se conectan a servicios de análisis, publicidad ni plataformas de terceros. No utilizamos Firebase, Google Analytics, ni ningún SDK de rastreo de comportamiento.",
+        "No utilizamos publicidad ni SDK de seguimiento de comportamiento entre aplicaciones o sitios. Algunas apps usan proveedores operativos —por ejemplo, tiendas, gestión de suscripciones, cotizaciones o infraestructura— identificados en sus políticas específicas.",
       subscriptionsTitle: "Suscripciones y pagos",
       subscriptionsBody:
         "Algunas funciones premium de nuestras apps requieren una suscripción. Los pagos son procesados íntegramente por Apple App Store o Google Play Store según la plataforma. Movilabs no recibe ni almacena datos de tarjetas de crédito ni información bancaria. Las condiciones de facturación y cancelación están regidas por los términos de la tienda correspondiente.",
       institutionalWebsiteTitle: "Sitio web institucional",
       institutionalWebsiteBody:
-        "Este sitio web es únicamente informativo. No utilizamos cookies de seguimiento, formularios de registro ni sistemas de análisis de visitantes.",
+        "Este sitio web es únicamente informativo. No utilizamos cookies de seguimiento, formularios de registro ni sistemas propios de análisis de visitantes. El proveedor de alojamiento puede procesar registros técnicos de conexión, como dirección IP, fecha, hora, agente de usuario y datos de seguridad, para operar y proteger el servicio.",
+      productPolicyTitle: "Política específica de Pulso",
+      productPolicyBody:
+        "Pulso cuenta con una política específica que describe los datos locales, la medición opcional de Ritmo, sus proveedores, conservación y controles de privacidad.",
+      productPolicyLink: "Consultar la política de privacidad de Pulso",
       changesTitle: "Cambios en esta política",
       changesBody:
-        "Si en el futuro incorporamos funciones que impliquen recopilación de datos, esta política será actualizada con anticipación y claridad. La fecha de última actualización siempre estará visible al inicio de esta página.",
+        "Actualizaremos esta política y las políticas específicas cuando cambien nuestras aplicaciones, proveedores o prácticas de datos. La fecha de última actualización estará visible al inicio de cada página.",
       contactTitle: "Contacto",
       contactBody:
         "Para cualquier consulta relacionada con privacidad, podés escribirnos a:",
@@ -208,26 +220,33 @@ const dictionaries: Record<Locale, Dictionary> = {
     privacy: {
       legalKicker: "Legal",
       title: "Privacy Policy",
-      lastUpdated: "Last updated: March 7, 2026",
+      lastUpdated: "Last updated: October 3, 2026",
       intro:
         "This policy describes how Movilabs handles user information in connection with its mobile applications and this institutional website.",
+      controllerTitle: "Controller",
+      controllerBody:
+        "Movilabs is the brand under which Maximiliano Cuesta, an independent developer based in Chubut, Argentina, operates. For privacy questions or to exercise your rights, email legal@movilabs.app.",
       dataCollectedTitle: "Data collected",
       dataCollectedBody:
-        "Our apps, including Pulso, operate entirely on your device (local-first). We do not collect, store, or transmit personal data to external servers. All information generated through app usage remains exclusively on your device.",
+        "Our apps are designed with a local-first approach. In Pulso, financial records remain on the device. Some features may share technical data or limited, optional, consent-based usage summaries as explained in each product-specific policy.",
       dataCollectedNote:
-        "Movilabs has no access to any of your personal data. Your information never leaves your device.",
+        "Pulso does not send transactions, balances, accounts, categories, or notes to Movilabs. Its optional Rhythm measurement excludes that information and requires express consent.",
       thirdPartyTitle: "Third-party services",
       thirdPartyBody:
-        "Our apps do not connect to analytics, advertising, or third-party tracking platforms. We do not use Firebase, Google Analytics, or any behavioral tracking SDKs.",
+        "We do not use advertising or behavioral SDKs that track people across apps or websites. Some apps use operational providers—such as stores, subscription management, exchange-rate services, or infrastructure—identified in their product-specific policies.",
       subscriptionsTitle: "Subscriptions and payments",
       subscriptionsBody:
         "Some premium features in our apps require a subscription. Payments are processed entirely by the Apple App Store or Google Play Store depending on the platform. Movilabs does not receive or store credit card or banking information. Billing and cancellation terms are governed by the respective store's policies.",
       institutionalWebsiteTitle: "Institutional website",
       institutionalWebsiteBody:
-        "This website is informational only. We do not use tracking cookies, registration forms, or visitor analytics systems.",
+        "This website is informational only. We do not use tracking cookies, registration forms, or our own visitor analytics systems. The hosting provider may process technical connection logs, such as IP address, date, time, user agent, and security data, to operate and protect the service.",
+      productPolicyTitle: "Pulso-specific policy",
+      productPolicyBody:
+        "Pulso has a specific policy describing local data, optional Rhythm measurement, its providers, retention, and privacy controls.",
+      productPolicyLink: "Read the Pulso Privacy Policy",
       changesTitle: "Changes to this policy",
       changesBody:
-        "If we introduce features that involve data collection in the future, this policy will be updated clearly and in advance. The last updated date will always be visible at the top of this page.",
+        "We will update this policy and product-specific policies when our apps, providers, or data practices change. The last updated date will appear at the top of each page.",
       contactTitle: "Contact",
       contactBody: "For any privacy-related questions, you can reach us at:",
       contactEmail: "legal@movilabs.app",
@@ -292,26 +311,33 @@ const dictionaries: Record<Locale, Dictionary> = {
     privacy: {
       legalKicker: "Legal",
       title: "Política de privacidade",
-      lastUpdated: "Última atualização: 7 de março de 2026",
+      lastUpdated: "Última atualização: 3 de outubro de 2026",
       intro:
         "Esta política descreve como a Movilabs gerencia as informações dos usuários em relação aos seus aplicativos móveis e a este site institucional.",
+      controllerTitle: "Responsável",
+      controllerBody:
+        "Movilabs é a marca sob a qual opera Maximiliano Cuesta, desenvolvedor independente radicado em Chubut, Argentina. Para consultas de privacidade ou exercício de direitos, escreva para legal@movilabs.app.",
       dataCollectedTitle: "Dados coletados",
       dataCollectedBody:
-        "Nossos aplicativos, incluindo o Pulso, funcionam completamente no dispositivo do usuário (local-first). Não coletamos, armazenamos nem transmitimos dados pessoais para servidores externos. Todas as informações geradas pelo uso do app permanecem exclusivamente no seu dispositivo.",
+        "Nossos aplicativos são projetados com uma abordagem local-first. No Pulso, os registros financeiros permanecem no dispositivo. Alguns recursos podem compartilhar dados técnicos ou resumos de uso opcionais, limitados e consentidos, conforme explicado na política específica de cada produto.",
       dataCollectedNote:
-        "A Movilabs não tem acesso a nenhum dado pessoal seu. Suas informações não saem do seu dispositivo.",
+        "O Pulso não envia lançamentos, saldos, contas, categorias nem notas para a Movilabs. A medição opcional do Ritmo exclui essas informações e exige consentimento expresso.",
       thirdPartyTitle: "Serviços de terceiros",
       thirdPartyBody:
-        "Nossos aplicativos não se conectam a serviços de análise, publicidade ou plataformas de rastreamento de terceiros. Não utilizamos Firebase, Google Analytics ou qualquer SDK de rastreamento comportamental.",
+        "Não utilizamos publicidade nem SDKs de rastreamento comportamental entre aplicativos ou sites. Alguns apps usam provedores operacionais —como lojas, gestão de assinaturas, serviços de cotação ou infraestrutura— identificados em suas políticas específicas.",
       subscriptionsTitle: "Assinaturas e pagamentos",
       subscriptionsBody:
         "Alguns recursos premium dos nossos apps exigem uma assinatura. Os pagamentos são processados integralmente pela Apple App Store ou Google Play Store, conforme a plataforma. A Movilabs não recebe nem armazena dados de cartão de crédito ou informações bancárias. Os termos de cobrança e cancelamento são regidos pelas políticas da respectiva loja.",
       institutionalWebsiteTitle: "Site institucional",
       institutionalWebsiteBody:
-        "Este site é apenas informativo. Não utilizamos cookies de rastreamento, formulários de registro nem sistemas de análise de visitantes.",
+        "Este site é apenas informativo. Não utilizamos cookies de rastreamento, formulários de registro nem sistemas próprios de análise de visitantes. O provedor de hospedagem pode processar registros técnicos de conexão, como endereço IP, data, hora, agente do usuário e dados de segurança, para operar e proteger o serviço.",
+      productPolicyTitle: "Política específica do Pulso",
+      productPolicyBody:
+        "O Pulso possui uma política específica que descreve os dados locais, a medição opcional do Ritmo, seus provedores, retenção e controles de privacidade.",
+      productPolicyLink: "Consultar a política de privacidade do Pulso",
       changesTitle: "Alterações nesta política",
       changesBody:
-        "Se no futuro adicionarmos recursos que envolvam coleta de dados, esta política será atualizada com antecedência e clareza. A data da última atualização sempre estará visível no início desta página.",
+        "Atualizaremos esta política e as políticas específicas quando nossos aplicativos, provedores ou práticas de dados mudarem. A data da última atualização ficará visível no início de cada página.",
       contactTitle: "Contato",
       contactBody: "Para qualquer dúvida relacionada à privacidade, você pode nos escrever em:",
       contactEmail: "legal@movilabs.app",

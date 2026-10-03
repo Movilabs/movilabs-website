@@ -105,6 +105,13 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
 
           <section className="mt-10 space-y-4">
             <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
+              {t.privacy.controllerTitle}
+            </h2>
+            <p className="text-base leading-relaxed text-muted">{t.privacy.controllerBody}</p>
+          </section>
+
+          <section className="mt-10 space-y-4">
+            <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
               {t.privacy.dataCollectedTitle}
             </h2>
             <p className="text-base leading-relaxed text-muted">{t.privacy.dataCollectedBody}</p>
@@ -132,6 +139,19 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
             <p className="text-base leading-relaxed text-muted">
               {t.privacy.institutionalWebsiteBody}
             </p>
+          </section>
+
+          <section className="mt-10 space-y-4">
+            <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
+              {t.privacy.productPolicyTitle}
+            </h2>
+            <p className="text-base leading-relaxed text-muted">{t.privacy.productPolicyBody}</p>
+            <a
+              href={`/${locale}/pulso/privacy`}
+              className="focus-ring inline-flex rounded text-ink underline decoration-line underline-offset-4 hover:text-accent"
+            >
+              {t.privacy.productPolicyLink}
+            </a>
           </section>
 
           <section className="mt-10 space-y-4">
