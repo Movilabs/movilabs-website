@@ -128,7 +128,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     privacy: {
       legalKicker: "Legal",
       title: "Política de privacidad",
-      lastUpdated: "Última actualización: 3 de octubre de 2026",
+      lastUpdated: "Última actualización: 5 de octubre de 2026",
       intro:
         "Esta política describe cómo Movilabs gestiona la información de los usuarios en relación con sus aplicaciones móviles y este sitio web institucional.",
       controllerTitle: "Responsable",
@@ -138,7 +138,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       dataCollectedBody:
         "Nuestras aplicaciones están diseñadas con un enfoque local-first. En Pulso, los registros financieros permanecen en el dispositivo. Algunas funciones pueden compartir datos técnicos o resúmenes de uso opcionales, limitados y consentidos, según se explica en la política específica de cada producto.",
       dataCollectedNote:
-        "Pulso no envía movimientos, saldos, cuentas, categorías ni notas a Movilabs. Su medición opcional de Ritmo excluye esos datos y requiere consentimiento expreso.",
+        "Pulso no envía movimientos, saldos, cuentas, categorías ni notas a Movilabs. Sus resúmenes opcionales de uso excluyen esos datos y requieren consentimiento expreso.",
       thirdPartyTitle: "Servicios de terceros",
       thirdPartyBody:
         "No utilizamos publicidad ni SDK de seguimiento de comportamiento entre aplicaciones o sitios. Algunas apps usan proveedores operativos —por ejemplo, tiendas, gestión de suscripciones, cotizaciones o infraestructura— identificados en sus políticas específicas.",
@@ -150,7 +150,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         "Este sitio web es únicamente informativo. No utilizamos cookies de seguimiento, formularios de registro ni sistemas propios de análisis de visitantes. El proveedor de alojamiento puede procesar registros técnicos de conexión, como dirección IP, fecha, hora, agente de usuario y datos de seguridad, para operar y proteger el servicio.",
       productPolicyTitle: "Política específica de Pulso",
       productPolicyBody:
-        "Pulso cuenta con una política específica que describe los datos locales, la medición opcional de Ritmo, sus proveedores, conservación y controles de privacidad.",
+        "Pulso cuenta con una política específica que describe los datos locales, la medición opcional de uso, sus proveedores, conservación y controles de privacidad.",
       productPolicyLink: "Consultar la política de privacidad de Pulso",
       changesTitle: "Cambios en esta política",
       changesBody:
@@ -220,7 +220,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     privacy: {
       legalKicker: "Legal",
       title: "Privacy Policy",
-      lastUpdated: "Last updated: October 3, 2026",
+      lastUpdated: "Last updated: October 5, 2026",
       intro:
         "This policy describes how Movilabs handles user information in connection with its mobile applications and this institutional website.",
       controllerTitle: "Controller",
@@ -230,7 +230,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       dataCollectedBody:
         "Our apps are designed with a local-first approach. In Pulso, financial records remain on the device. Some features may share technical data or limited, optional, consent-based usage summaries as explained in each product-specific policy.",
       dataCollectedNote:
-        "Pulso does not send transactions, balances, accounts, categories, or notes to Movilabs. Its optional Rhythm measurement excludes that information and requires express consent.",
+        "Pulso does not send transactions, balances, accounts, categories, or notes to Movilabs. Its optional usage summaries exclude that information and require express consent.",
       thirdPartyTitle: "Third-party services",
       thirdPartyBody:
         "We do not use advertising or behavioral SDKs that track people across apps or websites. Some apps use operational providers—such as stores, subscription management, exchange-rate services, or infrastructure—identified in their product-specific policies.",
@@ -242,7 +242,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         "This website is informational only. We do not use tracking cookies, registration forms, or our own visitor analytics systems. The hosting provider may process technical connection logs, such as IP address, date, time, user agent, and security data, to operate and protect the service.",
       productPolicyTitle: "Pulso-specific policy",
       productPolicyBody:
-        "Pulso has a specific policy describing local data, optional Rhythm measurement, its providers, retention, and privacy controls.",
+        "Pulso has a specific policy describing local data, optional usage measurement, its providers, retention, and privacy controls.",
       productPolicyLink: "Read the Pulso Privacy Policy",
       changesTitle: "Changes to this policy",
       changesBody:
@@ -311,7 +311,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     privacy: {
       legalKicker: "Legal",
       title: "Política de privacidade",
-      lastUpdated: "Última atualização: 3 de outubro de 2026",
+      lastUpdated: "Última atualização: 5 de outubro de 2026",
       intro:
         "Esta política descreve como a Movilabs gerencia as informações dos usuários em relação aos seus aplicativos móveis e a este site institucional.",
       controllerTitle: "Responsável",
@@ -321,7 +321,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       dataCollectedBody:
         "Nossos aplicativos são projetados com uma abordagem local-first. No Pulso, os registros financeiros permanecem no dispositivo. Alguns recursos podem compartilhar dados técnicos ou resumos de uso opcionais, limitados e consentidos, conforme explicado na política específica de cada produto.",
       dataCollectedNote:
-        "O Pulso não envia lançamentos, saldos, contas, categorias nem notas para a Movilabs. A medição opcional do Ritmo exclui essas informações e exige consentimento expresso.",
+        "O Pulso não envia lançamentos, saldos, contas, categorias nem notas para a Movilabs. Seus resumos opcionais de uso excluem essas informações e exigem consentimento expresso.",
       thirdPartyTitle: "Serviços de terceiros",
       thirdPartyBody:
         "Não utilizamos publicidade nem SDKs de rastreamento comportamental entre aplicativos ou sites. Alguns apps usam provedores operacionais —como lojas, gestão de assinaturas, serviços de cotação ou infraestrutura— identificados em suas políticas específicas.",
@@ -333,7 +333,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         "Este site é apenas informativo. Não utilizamos cookies de rastreamento, formulários de registro nem sistemas próprios de análise de visitantes. O provedor de hospedagem pode processar registros técnicos de conexão, como endereço IP, data, hora, agente do usuário e dados de segurança, para operar e proteger o serviço.",
       productPolicyTitle: "Política específica do Pulso",
       productPolicyBody:
-        "O Pulso possui uma política específica que descreve os dados locais, a medição opcional do Ritmo, seus provedores, retenção e controles de privacidade.",
+        "O Pulso possui uma política específica que descreve os dados locais, a medição opcional de uso, seus provedores, retenção e controles de privacidade.",
       productPolicyLink: "Consultar a política de privacidade do Pulso",
       changesTitle: "Alterações nesta política",
       changesBody:
