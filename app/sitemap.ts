@@ -23,6 +23,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    {
+      url: `https://movilabs.app/${locale}/pulso/support`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `https://movilabs.app/${locale}/pulso/terms`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
   ]);
 
   return localizedEntries;
