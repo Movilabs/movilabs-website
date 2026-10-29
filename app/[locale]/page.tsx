@@ -1,6 +1,8 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
+import { Journey } from "@/components/journey";
+import { PrincipleArt } from "@/components/principle-art";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { isLocale } from "@/lib/i18n/config";
@@ -92,56 +94,66 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <SiteHeader locale={locale} currentPath="/" labels={t.nav} />
 
-      <main className="pt-10">
-        <section className="site-container relative py-16 sm:py-24 lg:py-28">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 -top-12 -z-10 h-[32rem] bg-[radial-gradient(circle_at_70%_30%,rgba(120,150,255,0.15),transparent_60%)]"
-          />
-
-          <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)]">
-            <div>
-              <p className="inline-flex items-center rounded-full border border-line bg-soft px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-muted animate-fade-up">
-                {t.home.badge}
-              </p>
-              <h1
-                className="mt-6 max-w-[42rem] animate-fade-up font-display text-[2.2rem] font-medium leading-[1.06] tracking-[-0.03em] text-ink sm:mt-7 sm:text-[3rem] lg:text-[4rem]"
-                style={{ textWrap: "balance" }}
+      <main className="pt-6 lg:pt-4">
+        <section className="hero-backdrop relative">
+          <div className="site-container relative py-14 sm:py-20 lg:py-8">
+            <p className="inline-flex items-center rounded-full border border-line bg-soft px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-muted animate-fade-up">
+              {t.home.badge}
+            </p>
+            <h1
+              className="mt-6 max-w-[46rem] animate-fade-up font-display text-[2.2rem] font-medium leading-[1.06] tracking-[-0.03em] text-ink sm:mt-7 sm:text-[3rem] lg:mt-5 lg:text-[clamp(2.5rem,7vh,4rem)]"
+              style={{ textWrap: "balance" }}
+            >
+              {t.home.headlineTop}
+              <span className="text-muted md:block"> {t.home.headlineBottom}</span>
+            </h1>
+            <p
+              className="mt-7 max-w-[39rem] animate-fade-up text-base leading-[1.78] text-muted sm:mt-8 sm:text-lg lg:mt-4 lg:max-w-[44rem] lg:text-base lg:leading-relaxed"
+              style={{ textWrap: "balance" }}
+            >
+              {t.home.subtitle}
+            </p>
+            <div className="mt-9 animate-fade-up lg:mt-5">
+              <a
+                href="#contact"
+                className="focus-ring inline-flex items-center rounded-full bg-accent px-6 py-2.5 text-sm font-medium tracking-[0.01em] text-canvas transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink"
               >
-                {t.home.headlineTop}
-                <span className="md:block"> {t.home.headlineBottom}</span>
-              </h1>
-              <p
-                className="mt-7 max-w-[39rem] animate-fade-up text-base leading-[1.78] text-muted sm:mt-8 sm:text-lg"
-                style={{ textWrap: "balance" }}
-              >
-                {t.home.subtitle}
-              </p>
-              <div className="mt-10 sm:mt-11 animate-fade-up">
-                <a
-                  href="#contact"
-                  className="focus-ring inline-flex items-center rounded-full border border-line bg-soft px-5 py-2.5 text-sm font-medium tracking-[0.01em] text-ink shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:bg-panel"
-                >
-                  {t.home.cta}
-                </a>
-              </div>
+                {t.home.cta}
+              </a>
             </div>
 
-            <aside className="frosted animate-fade-in rounded-3xl p-6 sm:p-7">
-              <p className="text-xs uppercase tracking-[0.18em] text-muted">{t.home.howWeWork}</p>
-              <ul className="mt-6 space-y-6">
-                {t.home.workItems.map((item) => (
-                  <li key={item.title} className="space-y-2">
-                    <p className="text-sm font-semibold text-ink">{item.title}</p>
-                    <p className="text-sm leading-relaxed text-muted">{item.description}</p>
-                  </li>
-                ))}
-              </ul>
-            </aside>
+            <div className="mt-14 animate-fade-in sm:mt-16 lg:mt-4">
+              <Journey label={t.journey.label} steps={t.journey.steps} />
+            </div>
           </div>
         </section>
 
-        <section id="about" className="section-rule">
+        <section className="bg-accent text-canvas">
+          <div className="site-container py-16 sm:py-20">
+            <h2 className="max-w-[28rem] font-display text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl">
+              {t.home.howWeWork}
+            </h2>
+            <ul className="mt-10 grid gap-5 md:grid-cols-3">
+              {t.home.workItems.map((item, index) => (
+                <li
+                  key={item.title}
+                  className="group overflow-hidden rounded-2xl bg-canvas text-ink transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <div className="h-40 border-b border-line bg-panel p-4">
+                    <PrincipleArt index={index} />
+                  </div>
+                  <div className="space-y-3 p-6">
+                    <p className="text-[11px] tracking-[0.2em] text-muted">{String(index + 1).padStart(2, "0")}</p>
+                    <p className="font-display text-xl font-medium leading-snug">{item.title}</p>
+                    <p className="text-sm leading-relaxed text-muted">{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="about" className="bg-panel">
           <div className="site-container py-20 sm:py-24">
             <div className="grid gap-10 lg:grid-cols-[16rem_minmax(0,1fr)]">
               <p className="pt-1 text-xs uppercase tracking-[0.18em] text-muted">{t.about.kicker}</p>
@@ -160,7 +172,7 @@ export default async function HomePage({ params }: HomePageProps) {
           </div>
         </section>
 
-        <section id="contact" className="section-rule">
+        <section id="contact">
           <div className="site-container py-16 sm:py-20">
             <div className="max-w-3xl space-y-6">
               <h2 className="font-display text-2xl font-medium tracking-tight text-ink sm:text-3xl">

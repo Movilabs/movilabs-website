@@ -28,6 +28,10 @@ export type Dictionary = {
     howWeWork: string;
     workItems: WorkItem[];
   };
+  journey: {
+    label: string;
+    steps: { title: string; note: string }[];
+  };
   about: {
     kicker: string;
     title: string;
@@ -108,6 +112,15 @@ const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Aplicaciones construidas con tecnologías actuales, optimizadas para rendimiento, mantenimiento y evolución futura.",
         },
+      ],
+    },
+    journey: {
+      label: "Del primer boceto a tu móvil",
+      steps: [
+        { title: "Idea", note: "Problema real" },
+        { title: "Diseño", note: "Jerarquía clara" },
+        { title: "Código + IA", note: "Tecnología actual" },
+        { title: "App", note: "Pensada para durar" },
       ],
     },
     about: {
@@ -202,6 +215,15 @@ const dictionaries: Record<Locale, Dictionary> = {
         },
       ],
     },
+    journey: {
+      label: "From first sketch to your phone",
+      steps: [
+        { title: "Idea", note: "Real problem" },
+        { title: "Design", note: "Clear hierarchy" },
+        { title: "Code + AI", note: "Modern technology" },
+        { title: "App", note: "Built to last" },
+      ],
+    },
     about: {
       kicker: "About Movilabs",
       title: "A studio focused on building useful, well-designed mobile apps.",
@@ -291,6 +313,15 @@ const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Aplicativos construídos com tecnologias atuais, otimizados para desempenho, manutenção e evolução futura.",
         },
+      ],
+    },
+    journey: {
+      label: "Do primeiro esboço ao seu celular",
+      steps: [
+        { title: "Ideia", note: "Problema real" },
+        { title: "Design", note: "Hierarquia clara" },
+        { title: "Código + IA", note: "Tecnologia atual" },
+        { title: "App", note: "Pensado para durar" },
       ],
     },
     about: {
