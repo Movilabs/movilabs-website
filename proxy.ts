@@ -5,7 +5,7 @@ import { defaultLocale, isLocale } from "@/lib/i18n/config";
 
 const PUBLIC_FILE = /\.(.*)$/;
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (
@@ -14,6 +14,7 @@ export function middleware(request: NextRequest) {
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
     pathname === "/icon.svg" ||
+    pathname === "/og" ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();
@@ -27,14 +28,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl);
   }
 
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-locale", maybeLocale);
-
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+  return NextResponse.next();
 }
 
 export const config = {

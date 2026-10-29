@@ -14,6 +14,7 @@ export type Dictionary = {
     ogLocale: string;
   };
   nav: {
+    main: string;
     about: string;
     contact: string;
     privacy: string;
@@ -83,6 +84,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       ogLocale: "es_ES",
     },
     nav: {
+      main: "Principal",
       about: "Sobre",
       contact: "Contacto",
       privacy: "Privacidad",
@@ -184,6 +186,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       ogLocale: "en_US",
     },
     nav: {
+      main: "Main navigation",
       about: "About",
       contact: "Contact",
       privacy: "Privacy",
@@ -284,6 +287,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       ogLocale: "pt_BR",
     },
     nav: {
+      main: "Navegação principal",
       about: "Sobre",
       contact: "Contato",
       privacy: "Privacidade",
