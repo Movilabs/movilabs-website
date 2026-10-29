@@ -1,10 +1,11 @@
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { SITE_URL } from "@/lib/site";
 
 type PrivacyPageProps = {
   params: Promise<{ locale: string }>;
@@ -17,17 +18,14 @@ const languageAlternates = {
 };
 
 const sharedOgImage = {
-  url: "/opengraph-image.png",
+  url: `${SITE_URL}/og`,
   width: 1200,
   height: 630,
 };
 
-const sharedTwitterImage = "/opengraph-image.png";
+const sharedTwitterImage = `${SITE_URL}/og`;
 
-export async function generateMetadata(
-  { params }: PrivacyPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: PrivacyPageProps): Promise<Metadata> {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
@@ -35,18 +33,6 @@ export async function generateMetadata(
   }
 
   const t = getDictionary(locale);
-  const previousMetadata = await parent;
-  const parentOgImages = previousMetadata.openGraph?.images
-    ? Array.isArray(previousMetadata.openGraph.images)
-      ? previousMetadata.openGraph.images
-      : [previousMetadata.openGraph.images]
-    : [];
-  const parentTwitterImages = previousMetadata.twitter?.images
-    ? Array.isArray(previousMetadata.twitter.images)
-      ? previousMetadata.twitter.images
-      : [previousMetadata.twitter.images]
-    : [];
-
   return {
     title: t.metadata.privacyTitle,
     description: t.metadata.privacyDescription,
@@ -56,18 +42,18 @@ export async function generateMetadata(
     },
     openGraph: {
       type: "website",
-      url: `https://movilabs.app/${locale}/privacy`,
+      url: `${SITE_URL}/${locale}/privacy`,
       siteName: "Movilabs",
       title: t.metadata.privacyTitle,
       description: t.metadata.privacyDescription,
       locale: t.metadata.ogLocale,
-      images: [sharedOgImage, ...parentOgImages],
+      images: [sharedOgImage],
     },
     twitter: {
       card: "summary_large_image",
       title: t.metadata.privacyTitle,
       description: t.metadata.privacyDescription,
-      images: [sharedTwitterImage, ...parentTwitterImages],
+      images: [sharedTwitterImage],
     },
   };
 }
