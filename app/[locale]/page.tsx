@@ -2,7 +2,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Journey } from "@/components/journey";
-import { PrincipleIcon } from "@/components/principle-icon";
+import { PrincipleArt } from "@/components/principle-art";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { isLocale } from "@/lib/i18n/config";
@@ -129,17 +129,23 @@ export default async function HomePage({ params }: HomePageProps) {
         </section>
 
         <section className="bg-accent text-canvas">
-          <div className="site-container py-14 sm:py-16">
-            <p className="text-xs uppercase tracking-[0.18em] text-canvas/70">{t.home.howWeWork}</p>
-            <ul className="mt-8 grid gap-8 md:grid-cols-3 md:gap-10">
+          <div className="site-container py-16 sm:py-20">
+            <h2 className="max-w-[28rem] font-display text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl">
+              {t.home.howWeWork}
+            </h2>
+            <ul className="mt-10 grid gap-5 md:grid-cols-3">
               {t.home.workItems.map((item, index) => (
-                <li key={item.title} className="flex gap-4 border-t border-canvas/25 pt-6">
-                  <span className="mt-0.5 shrink-0 text-canvas">
-                    <PrincipleIcon index={index} />
-                  </span>
-                  <div className="space-y-2">
-                    <p className="font-display text-lg font-medium leading-snug">{item.title}</p>
-                    <p className="text-sm leading-relaxed text-canvas/75">{item.description}</p>
+                <li
+                  key={item.title}
+                  className="group overflow-hidden rounded-2xl bg-canvas text-ink transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <div className="h-40 border-b border-line bg-panel p-4">
+                    <PrincipleArt index={index} />
+                  </div>
+                  <div className="space-y-3 p-6">
+                    <p className="text-[11px] tracking-[0.2em] text-muted">{String(index + 1).padStart(2, "0")}</p>
+                    <p className="font-display text-xl font-medium leading-snug">{item.title}</p>
+                    <p className="text-sm leading-relaxed text-muted">{item.description}</p>
                   </div>
                 </li>
               ))}
