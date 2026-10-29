@@ -94,26 +94,26 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <SiteHeader locale={locale} currentPath="/" labels={t.nav} />
 
-      <main className="pt-10">
+      <main className="pt-6 lg:pt-4">
         <section className="hero-backdrop relative">
-          <div className="site-container relative py-14 sm:py-20 lg:py-24">
+          <div className="site-container relative py-14 sm:py-20 lg:py-8">
             <p className="inline-flex items-center rounded-full border border-line bg-soft px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-muted animate-fade-up">
               {t.home.badge}
             </p>
             <h1
-              className="mt-6 max-w-[46rem] animate-fade-up font-display text-[2.2rem] font-medium leading-[1.06] tracking-[-0.03em] text-ink sm:mt-7 sm:text-[3rem] lg:text-[4rem]"
+              className="mt-6 max-w-[46rem] animate-fade-up font-display text-[2.2rem] font-medium leading-[1.06] tracking-[-0.03em] text-ink sm:mt-7 sm:text-[3rem] lg:mt-5 lg:text-[clamp(2.5rem,7vh,4rem)]"
               style={{ textWrap: "balance" }}
             >
               {t.home.headlineTop}
               <span className="text-muted md:block"> {t.home.headlineBottom}</span>
             </h1>
             <p
-              className="mt-7 max-w-[39rem] animate-fade-up text-base leading-[1.78] text-muted sm:mt-8 sm:text-lg"
+              className="mt-7 max-w-[39rem] animate-fade-up text-base leading-[1.78] text-muted sm:mt-8 sm:text-lg lg:mt-4 lg:max-w-[44rem] lg:text-base lg:leading-relaxed"
               style={{ textWrap: "balance" }}
             >
               {t.home.subtitle}
             </p>
-            <div className="mt-9 animate-fade-up">
+            <div className="mt-9 animate-fade-up lg:mt-5">
               <a
                 href="#contact"
                 className="focus-ring inline-flex items-center rounded-full bg-accent px-6 py-2.5 text-sm font-medium tracking-[0.01em] text-canvas transition-all duration-200 hover:-translate-y-0.5 hover:bg-ink"
@@ -122,7 +122,7 @@ export default async function HomePage({ params }: HomePageProps) {
               </a>
             </div>
 
-            <div className="mt-14 animate-fade-in sm:mt-16">
+            <div className="mt-14 animate-fade-in sm:mt-16 lg:mt-4">
               <Journey label={t.journey.label} steps={t.journey.steps} />
             </div>
           </div>

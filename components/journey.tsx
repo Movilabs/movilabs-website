@@ -50,10 +50,10 @@ export function Journey({ label, steps }: JourneyProps) {
     <div>
       <div className="hidden lg:block">
         <svg
-          viewBox="0 0 1000 262"
+          viewBox="0 0 1000 252"
           role="img"
           aria-label={`${label}: ${steps.map((step) => step.title).join(" → ")}`}
-          className="w-full"
+          className="mx-auto h-auto max-h-[30vh] w-full"
         >
           <path
             d="M60 140 C 130 40, 220 40, 280 110 S 440 185, 510 110 S 680 45, 735 100"
@@ -63,13 +63,22 @@ export function Journey({ label, steps }: JourneyProps) {
             strokeDasharray="5 6"
           />
 
-          <line x1="60" y1="236" x2="735" y2="236" className="stroke-muted" strokeWidth="0.8" />
+          <line x1="60" y1="224" x2="735" y2="224" className="stroke-muted" strokeWidth="0.8" />
           {nodes.map((node, index) => (
             <g key={steps[index].title}>
-              <line x1={node.x} y1="229" x2={node.x} y2="243" className="stroke-muted" strokeWidth="0.8" />
-              <text x={node.x} y="257" textAnchor="middle" className="fill-muted" fontSize="10" letterSpacing="1.5">
+              <line x1={node.x} y1="217" x2={node.x} y2="231" className="stroke-muted" strokeWidth="0.8" />
+              <text x={node.x} y="246" textAnchor="middle" className="fill-muted" fontSize="10" letterSpacing="1.5">
                 {String(index + 1).padStart(2, "0")}
               </text>
+              <line
+                x1={node.x}
+                y1={node.y + 14}
+                x2={node.x}
+                y2="166"
+                className="stroke-line"
+                strokeWidth="1"
+                strokeDasharray="2 4"
+              />
               <circle
                 cx={node.x}
                 cy={node.y}
@@ -77,16 +86,16 @@ export function Journey({ label, steps }: JourneyProps) {
                 strokeWidth="1.5"
                 className={index === nodes.length - 1 ? "fill-accent stroke-accent" : "fill-canvas stroke-accent"}
               />
-              <text x={node.x} y={node.y + 34} textAnchor="middle" className="fill-ink" fontSize="15" fontWeight="500">
+              <text x={node.x} y="188" textAnchor="middle" className="fill-ink" fontSize="15" fontWeight="500">
                 {steps[index].title}
               </text>
-              <text x={node.x} y={node.y + 54} textAnchor="middle" className="fill-muted" fontSize="12.5">
+              <text x={node.x} y="207" textAnchor="middle" className="fill-muted" fontSize="12.5">
                 {steps[index].note}
               </text>
             </g>
           ))}
 
-          <PhoneMock x="835" y="14" width="125" height="212" />
+          <PhoneMock x="835" y="6" width="125" height="212" />
         </svg>
       </div>
 
