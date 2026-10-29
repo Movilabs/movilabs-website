@@ -3,7 +3,7 @@ import Link from "next/link";
 import { locales, type Locale } from "@/lib/i18n/config";
 
 const linkClassName =
-  "focus-ring rounded-md px-1.5 py-1 text-[13px] text-muted transition-colors duration-200 hover:text-ink sm:px-2 sm:text-sm";
+  "focus-ring rounded-md px-1 py-1 text-[12px] text-muted transition-colors duration-200 hover:text-ink min-[400px]:px-1.5 min-[400px]:text-[13px] sm:px-2 sm:text-sm";
 
 const localeLabel: Record<Locale, string> = {
   es: "ES",
@@ -31,11 +31,11 @@ export function SiteHeader({ locale, currentPath, labels }: SiteHeaderProps) {
         <div className="nav-glass flex h-14 items-center justify-between rounded-full px-3 sm:px-4">
           <Link
             href={`/${locale}`}
-            className="focus-ring rounded-full px-3 py-1 font-display text-xs uppercase tracking-[0.22em] text-ink transition-opacity duration-200 hover:opacity-80"
+            className="focus-ring rounded-full px-2 py-1 font-display text-xs uppercase tracking-[0.14em] sm:px-3 sm:tracking-[0.22em] text-ink transition-opacity duration-200 hover:opacity-80"
           >
             Movilabs
           </Link>
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1 sm:gap-3">
             <nav aria-label="Principal" className="flex items-center gap-1 sm:gap-2">
               <Link href={`/${locale}#about`} className={linkClassName}>
                 {labels.about}
