@@ -38,11 +38,15 @@ export default async function HomePage({ params }: HomePageProps) {
               {t.home.badge}
             </p>
             <h1
-              className="mt-6 max-w-[46rem] animate-fade-up font-display text-[2.2rem] font-medium leading-[1.06] tracking-[-0.03em] text-ink sm:mt-7 sm:text-[3rem] lg:mt-5 lg:text-[clamp(2.5rem,7vh,4rem)]"
+              className="mt-6 max-w-[46rem] font-display text-[2.2rem] font-medium leading-[1.06] tracking-[-0.03em] text-ink sm:mt-7 sm:text-[3rem] lg:mt-5 lg:text-[clamp(2.5rem,7vh,4rem)]"
               style={{ textWrap: "balance" }}
             >
-              {t.home.headlineTop}
-              <span className="text-muted md:block"> {t.home.headlineBottom}</span>
+              <span className="-mb-[0.14em] block overflow-hidden pb-[0.14em]">
+                <span className="reveal block">{t.home.headlineTop}</span>
+              </span>
+              <span className="-mb-[0.14em] block overflow-hidden pb-[0.14em]">
+                <span className="reveal reveal-2 block text-muted">{t.home.headlineBottom}</span>
+              </span>
             </h1>
             <p
               className="mt-7 max-w-[39rem] animate-fade-up text-base leading-[1.78] text-muted sm:mt-8 sm:text-lg lg:mt-4 lg:max-w-[44rem] lg:text-base lg:leading-relaxed"
