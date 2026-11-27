@@ -16,6 +16,9 @@ const config: Config = {
         line: "var(--color-border-subtle)",
         accent: "var(--color-accent)",
         brand: "var(--color-brand-primary)",
+        // Marca Pulso (assets/brand/BRAND_GUIDELINES.md del repo de Pulso).
+        pulso: "#2388ff",
+        "pulso-sky": "#82c4ff",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
